@@ -1,79 +1,81 @@
-## Homepage Redesign — More Elegant, Modern, Cinematic
 
-Goal: refine `src/pages/Index.tsx` so the homepage feels more elegant, more modern, with cleaner imagery, more motion, and remove the "Studio Note — 01" label. No other pages affected.
+## Direction
 
-### 1. Hero — slower, more cinematic
+Shift the brand voice from "quiet luxury / restraint" to **"structured femininity with bold color expression"** — neutral, minimal site chrome so the colorful garments carry the energy. Keep the typography system (Cormorant Garamond + Inter), color tokens, and Contact page exactly as they are.
 
-- Replace the current static hero image with a **slow Ken-Burns zoom** (subtle 1.0 → 1.08 over ~12s) on `hero-fashion.jpg` for constant gentle motion.
-- Soften the gradient overlay so the image reads cleaner (less wash, more contrast at top/bottom only).
-- Refine the headline: keep "Gaby Kerac" but reduce to `text-[14vw] md:text-[9vw]` so it feels less shouty and more editorial.
-- Replace the hero subhead copy with a tighter, more modern line:
-  - **Old**: "Modern feminine design with a focus on elegance and structure."
-  - **New**: "Womenswear shaped by restraint, movement, and the quiet authority of a well-cut line."
-- Replace the right column copy with:
-  - **New**: "A Boston-based design practice working between tailoring, drape, and digital craft — pieces made to be worn, not just seen."
-- Floating portrait: add a soft float animation (gentle 6s up/down) and a thin frame line.
+---
 
-### 2. Remove "Studio Note — 01" intro section
+## 1. Home (`src/pages/Index.tsx`)
 
-- Delete the entire "Studio Note — 01" block (left label + right large serif paragraph).
-- Replace with a much cleaner **single centered editorial statement**, no label, no grid:
-  - "A wardrobe of considered pieces — refined, feminine, and made to endure."
-  - Set in `font-display text-3xl md:text-5xl`, centered, max-w-4xl, generous vertical padding, with a thin hairline divider above and below.
+Keep the current architecture (hero → marquee → editorial statement → selected works → CTA), update copy and tighten visuals to match the new positioning.
 
-### 3. Marquee — more refined
+- **Hero subtitle**: change to `Fashion Designer` (currently "Fashion Designer" — keep).
+- **Hero headline pairing** — replace the current single line with the brief's headline + intro:
+  - Big line: *"Modern feminine design with a focus on elegance and structure."*
+  - Right-column body: *"A fashion designer focused on structured silhouettes, bold color expression, and refined femininity. Her work combines artistic inspiration with wearable design — pieces that feel both distinctive and elegant."*
+- **Editorial statement** (mid-page) — replace "considered pieces, refined, feminine, made to endure" with a color-forward line: *"Structured silhouettes, lived in color — designed to feel distinctive, feminine, and entirely wearable."*
+- **Marquee keywords** — swap to: `Structured Femininity · Bold Color · Architectural Lines · Movement · Pattern · Modern Tailoring`.
+- **Selected Works section** — keep 4 featured projects, but:
+  - Reduce the bone/sand wash so images read at full saturation (drop the `bg-sand/40` section background to plain `bg-background`, or lighten to `bg-bone`).
+  - Keep the asymmetric grid + animated underline.
+- **CTA** — soften to match new tone: *"Designing what comes next — together."* with link "Get in touch".
 
-- Slow the marquee speed (currently fast). Switch to a softer pace (~40s loop).
-- Reduce the keyword list to tighter, more modern words: "Quiet Luxury · Womenswear · Tailoring · Drape · Modern Femininity · Editorial".
-- Use lighter italic and reduce size slightly so it reads as a whisper, not a banner.
+## 2. Portfolio (`src/pages/Portfolio.tsx` + `src/data/projects.ts`) — biggest change
 
-### 4. Selected Works — cleaner grid + more motion
+Turn each project from a single-image entry into a real **case study** with a process strip.
 
-- Keep the asymmetric magazine layout but tighten:
-  - Increase vertical rhythm between rows.
-  - Each image gets a longer, smoother zoom-in on hover (`duration-[1800ms]`) plus a subtle parallax-style fade-up as it enters the viewport.
-  - Add a thin animated underline that draws in under the project title on hover.
-- Update section label copy:
-  - **Old**: "Selected Works" / "The Portfolio"
-  - **New**: "Selected Work — 2024 / 2025" / "Recent Pieces"
-- Add a small caption line under the section title: "Five garments from an ongoing study of feminine silhouette."
+Per project add to the data model:
+- `concept` (already there — rewrite to match new brief copy, 2–4 sentences).
+- `process[]` — array of `{ image, caption, kind: 'sketch' | 'digital' | 'clo3d' | 'motion' | 'final' }`.
+- Optional `motionSrc` (GIF / short mp4) for a hover or autoplay clip.
 
-### 5. CTA — more modern, less heavy
+Layout per case study:
+1. **Full-bleed hero image** of the final piece (edge-to-edge, no card chrome).
+2. **Title block** — number, title, category, year, 2–4 sentence concept, small spec list (year, fabric, process tags).
+3. **Process strip** — 3–4 thumbnails in a horizontal grid: hand sketch → digital flat → CLO 3D render → final / motion. Each with a tiny caption ("Hand sketch", "CLO 3D fitting", etc.). Hover zoom on each.
+4. **Optional motion clip** — if `motionSrc` exists, a muted autoplay loop in 3:4 frame.
+5. Generous whitespace between projects, hairline divider.
 
-- Reduce headline size from `text-8xl` to `text-5xl md:text-7xl` so it feels refined, not loud.
-- Update copy:
-  - **Old**: "Crafting the next chapter of femininity."
-  - **New**: "Let's shape what she wears next."
-- Update CTA link copy: "Begin a conversation →" → "Start a conversation".
-- Add a subtle hover micro-interaction: the arrow slides right and the underline expands.
+Updated project copy (matching your brief):
+- 01 Blue Fit-and-Flare — "A feminine dress with a structured bodice and flowing skirt. Designed to create movement and elegance while keeping a refined silhouette. The bold blue brings energy and freshness."
+- 02 Floral Two-Piece — "A modern structured set pairing a cropped top with a high-waisted pleated skirt. The floral pattern adds softness while the silhouette stays clean and architectural."
+- 03 Oriental-Inspired Fitted Dress — "A fitted design inspired by traditional forms, with a high collar and asymmetrical neckline. Cultural reference meets precise modern tailoring."
+- 04 Asymmetrical Wrap Skirt — "A high-waisted wrap skirt with layered construction and decisive lines. The structured drape and bold color create a confident modern statement."
+- 05 Asymmetrical Color-Block Skirt — "A minimal, striking design built on black-and-white contrast and asymmetry. Focused on structure, movement, and visual impact."
 
-### 6. Global motion polish (homepage only)
+> **Note on assets**: I'll wire the layout and use the existing single image as a tasteful placeholder for sketches / CLO renders / GIFs where you don't yet have files. To make the page truly land as a "professional case study," you'll want to drop in real hand sketches, digital flats, CLO 3D screenshots, and (ideally) one short motion clip per project. I'll show you exactly where to place them.
 
-- Add three new keyframes in `tailwind.config.ts` (scoped use on Index): `ken-burns`, `float-soft`, `marquee-slow`.
-- Use the existing `useReveal` hook for fade-up entry on every major block — already in place, just extend to the new sections.
+## 3. About (`src/pages/About.tsx`)
 
-### Technical notes
+Keep the layout (portrait + editorial image + 3-column meta strip), rewrite copy to match the new brief verbatim:
 
-- File touched: `src/pages/Index.tsx` (primary), `tailwind.config.ts` (add 3 keyframes/animations), `src/index.css` (optional: add a `.hairline` divider utility).
-- No new images needed — reuse `hero-fashion.jpg`, `gaby-portrait.jpg`, and existing project images.
-- No changes to routing, data, Nav, Footer, About, Portfolio, or Contact pages.
-- Preserve color tokens (`bone`, `sand`, `stone`, `ink`) and typography (Cormorant Garamond + Inter).
+- Lead: *"Gaby Kerac is the fashion designer behind Gabys Design — a womenswear practice creating feminine, structured pieces that balance elegance with bold visual expression. Her work is inspired by the relationship between color, form, and movement."*
+- Body 1: *"She draws inspiration from nature and architecture, translating those influences into clean silhouettes enriched with pattern and color. Her designs aim to bring positive energy, confidence, and individuality while staying refined and wearable."*
+- Body 2: *"Gaby combines traditional craftsmanship with modern tools — including CLO 3D and AI-assisted design processes — to create innovative, contemporary collections."*
+- Closing / philosophy block: replace "Quiet luxury, lived in." with **"Structure, softened by color."** and update the supporting paragraph to mention growing within the fashion industry and the Boston market.
+- Meta strip: keep, update Tools row to `CLO 3D · Adobe Suite · Hand patterning · AI-assisted design`.
 
-### Resulting flow
+## 4. Contact
 
-```text
-─────────────────────────────────────────────
- HERO — slow Ken-Burns image, floating portrait
- Gaby Kerac · refined headline · two-column intro
-─────────────────────────────────────────────
- Marquee (slow, whispered)
-─────────────────────────────────────────────
- Single centered editorial statement
- (replaces Studio Note — 01)
-─────────────────────────────────────────────
- Selected Work — 2024 / 2025
- Asymmetric grid · slow zoom · animated underlines
-─────────────────────────────────────────────
- CTA — "Let's shape what she wears next."
-─────────────────────────────────────────────
-```
+**No changes** — per your request, leave exactly as-is.
+
+## 5. Final polish
+
+- Audit spacing on mobile (≤768px): reduce hero headline to `text-[18vw]`, tighten section paddings from `py-32 md:py-48` to `py-20 md:py-32` where it's currently too airy on small screens.
+- Make sure colorful images render at full saturation — remove any tint overlays on Portfolio thumbnails, soften the hero gradient slightly (`from-bone/15 … to-bone/60`).
+- Keep all existing animations (ken-burns, float-soft, marquee, fade-up, image-zoom, animated underline).
+- Verify Nav + Footer still feel consistent — no changes expected.
+
+---
+
+## Files touched
+
+- `src/pages/Index.tsx` — copy + small visual tweaks
+- `src/pages/Portfolio.tsx` — restructured to full case studies with process strip
+- `src/data/projects.ts` — extend type with `process[]` + optional `motionSrc`, rewrite concepts
+- `src/pages/About.tsx` — copy rewrite, philosophy line
+- *(no changes)* `src/pages/Contact.tsx`, `tailwind.config.ts`, `src/index.css`, Nav, Footer
+
+## One question before I build
+
+Do you want me to **wire the Portfolio case-study layout now using your existing single image as placeholders** for the sketch / CLO 3D / motion slots (so the structure is ready and you just drop files in later), or **wait until you can share real sketches, CLO renders, and GIFs** so the first build looks fully real? My recommendation is to build the layout now — it'll make it obvious what to send me next.
