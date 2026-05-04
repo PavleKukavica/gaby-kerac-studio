@@ -117,4 +117,7 @@
     transition: transform 1.4s var(--transition-silk);
   }
   .img-zoom:hover img { transform: scale(1.04); }
+
+  /* Subtle unifying treatment for warm/outdoor phone photos used as accents */
+  .editorial-img { filter: contrast(1.03) saturate(0.97); }
 }
