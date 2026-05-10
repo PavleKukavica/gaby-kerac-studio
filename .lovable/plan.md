@@ -1,76 +1,45 @@
 
 ## Goal
 
-Make the Home page feel **clearly structured**, not like one long editorial scroll. Right now the sections blend (Hero → marquee → Color Story → statement → staggered Selected Works → CTA), and the heavy asymmetric grid with `md:mt-40` offsets reads as chaotic rather than considered. We will introduce a clear, repeatable rhythm so a visitor immediately understands: *who she is → what she designs → selected work → about preview → contact*.
+All photos for all 7 projects are now in. Rewrite the portfolio with the new titles, copy, and uploaded photos. Same 1-hero + 4-tile layout as Project 01 had before; alternating left/right title block stays.
 
-## New Home structure
+## Photo inventory — complete ✅
 
-```
-01  HERO              — name, title, one-line intro, hero portrait
-02  INTRO STRIP       — small "About / In short" block, 3 stat-style facts
-03  SIGNATURE PIECES  — 3-up Color Story, equal grid, numbered 01/02/03
-04  SELECTED WORKS    — clean 2-column editorial grid (no staggered offsets)
-05  PHILOSOPHY QUOTE  — single editorial statement, centered
-06  ABOUT PREVIEW     — short paragraph + portrait + link to /about
-07  CTA / CONTACT     — single bold line + "Get in touch"
-```
+| # | Title | Hero + tiles |
+|---|---|---|
+| 01 | Blue Fit-and-Flare *(text unchanged)* | Hero: existing `bluePhoto` · Tiles: `Priject_7_Photo3` (stairs twirl) · existing `blueRender` (digital flat) · `Priject_7_Photo1` (back, riverside) · `Priject_7_Photo2` (smiling, gate) |
+| 02 | Black Tailored Two-Piece *(new)* | Hero: `Priject_1_Photo1` · Tiles: `Priject_1_Photo2` (vest detail) · `Priject_1_Photo3` (silhouette) · 2 sketch/pattern placeholders |
+| 03 | Oriental-Inspired Fitted Dress *(text unchanged)* | Hero: `Priject_6_Photo1` · Tiles: existing `orientalRender` · `Priject_6_Photo2` (back) · `Priject_6_Photo3` (side) · 1 cultural-research placeholder |
+| 04 | Tropical Floral Blouse *(new)* | Hero: `Priject_2_Photo1` · Tiles: `Priject_2_Photo2` · 2 print/sketch placeholders · final crop |
+| 05 | Abstract Print Statement Shirt *(new)* | Hero: `Priject_3_Photo2` · Tiles: `Priject_3_Photo1` (cut pattern pieces — real artifact) · `Priject_3_Photo3` (back panel) · `Priject_3_Photo4` (seated) |
+| 06 | Geometric Two-Piece Ensemble *(new)* | Hero: `Priject_4_Photo1` · Tiles: `Priject_4_Photo2` · 2 sketch/pattern placeholders |
+| 07 | Minimalist Structured Blazer *(new)* | Hero: `Priject_5_Photo3` · Tiles: `Priject_5_Photo1` (gold "G" pin detail) · `Priject_5_Photo2` (fitting on dressform) · `Priject_5_Photo4` (pinning with sketches behind) |
 
-Every section gets:
-- a small **section index** label top-left (`01 — Introduction`, `02 — Signature`, etc.) in tracked uppercase
-- consistent vertical rhythm (`py-24 md:py-32`)
-- a hairline divider between sections so structure is visible
+## Per-project copy
 
-This is the single biggest change — it replaces the current "free-flow editorial" with a numbered chapter system, which is exactly what high-end designer portfolios (Phoebe Philo, The Row, Khaite) use to feel professional.
+Years and process meta come verbatim from your brief. Concepts: 01 and 03 unchanged; 02, 04, 05, 06, 07 use the new copy you sent.
 
-## Section-by-section
-
-### 01 — Hero (simplified)
-- Keep the giant `Gaby Kerac` headline and floating portrait of the black-vest set.
-- Remove the two-column intro paragraph from the hero — move it into Section 02 so the hero is purely a statement.
-- Keep `Collection / SS 26` and `Boston — New York` corner labels.
-
-### 02 — Introduction strip (NEW)
-- Replaces the in-hero paragraph.
-- Left: short bio paragraph ("A fashion designer focused on structured silhouettes…").
-- Right: a 3-item meta row — `Based · Boston` / `Focus · Womenswear` / `Tools · CLO 3D, Adobe, Hand patterning`.
-- Keeps the marquee directly under it as a visual breath.
-
-### 03 — Signature Pieces (was "Color Story")
-- Same 3 photos (`blue-flare`, `painted-shirt`, `red-oriental`).
-- Equal-width grid, each tile numbered `01 / 02 / 03` with title + year underneath (not just a tiny caption). Reads as a real lineup.
-
-### 04 — Selected Works (restructured)
-- **Drop the staggered `md:mt-40` offsets** — that's the main source of "messy".
-- New layout: clean **2-column grid** of 4 projects (3:4 tiles, equal heights). Optional 5th project as a full-width feature row at the bottom.
-- Keep hover zoom + animated underline on title.
-- Keep "View all" link top-right.
-
-### 05 — Philosophy quote
-- Keep the centered editorial statement, but trim it: *"Structure, softened by color."* (the one-liner from the brief) — much stronger than the current long sentence.
-- Hairline rules above and below stay.
-
-### 06 — About preview (NEW)
-- Two-column: left = `black-vest-set.jpg` portrait at modest size; right = 3-sentence bio + "Read more →" link to `/about`.
-- Gives the home page a clear identity moment without forcing visitors to navigate.
-
-### 07 — CTA
-- Keep current "Designing what comes next — together." + "Get in touch" link, but tighten padding so it doesn't feel like a third hero.
+| # | Title | Category | Year |
+|---|---|---|---|
+| 01 | Blue Fit-and-Flare Dress | Eveningwear | 2024 |
+| 02 | Black Tailored Two-Piece | Contemporary Set | 2026 |
+| 03 | Oriental-Inspired Fitted Dress | Couture Study | 2025 |
+| 04 | Tropical Floral Blouse | Print / Daywear | 2026 |
+| 05 | Abstract Print Statement Shirt | Wearable Art | 2026 |
+| 06 | Geometric Two-Piece Ensemble | Coordinated Set | 2024 |
+| 07 | Minimalist Structured Blazer | Tailoring | 2024 |
 
 ## Files touched
 
-- `src/pages/Index.tsx` — full restructure into 7 numbered sections, remove staggered grid offsets, add Intro strip + About preview.
-- *(no changes)* `src/data/projects.ts`, `Portfolio.tsx`, `About.tsx`, `Contact.tsx`, `index.css`, nav, footer.
+- **`src/assets/projects/`** — copy in 18 new photos with normalized names (e.g. `01-blue-3.jpg`, `02-black-set-1.jpg`, … `07-blazer-4.jpg`).
+- **`src/data/projects.ts`** — full rewrite: 7 entries in the new order with new copy, hero image, and exactly 4 process tiles each (real photos where I have them, `kind: "placeholder"` otherwise).
+- **`src/pages/Portfolio.tsx`** — header copy "Six case studies" → "Seven case studies"; drop the `grid-cols-3 / grid-cols-4` conditional (every project now has 4 tiles, so grid is always `md:grid-cols-4`).
+- **`src/pages/Index.tsx`** — Signature Pieces and Selected Works on the home page reference projects by slug. Update slugs to the new ones (`black-tailored-two-piece`, `abstract-print-shirt`, `oriental-fitted`, `minimalist-blazer`) so the home page doesn't break, and pull hero images from the `projects` array instead of hard-coded imports.
 
 ## What's intentionally NOT changing
 
-- Typography system (Cormorant + Inter) — unchanged.
-- Color palette and `editorial-img` treatment — unchanged.
-- Marquee, ken-burns hero animation, float-soft portrait — unchanged.
-- Portfolio and About pages — unchanged this round.
+- Project 01 and 03 concept text — unchanged.
+- Layout: alternating left/right title block, year/process meta row, hero-then-tiles rhythm — unchanged.
+- Design system, About, Contact, Home structure — unchanged.
 
-## Open question
-
-Do you want **section numbers visible** to the visitor (`01 — Introduction`, `02 — Signature Pieces`, …) as small tracked labels? This is what makes the structure *feel* structured. Two options:
-
-- **A** — Yes, show numbered section labels. More editorial, more "designer monograph". *(my recommendation)*
-- **B** — Keep labels but unnumbered (just `Introduction`, `Signature Pieces`). Slightly softer.
+Project 07 hero choice (the smiling designer + blazer on dressform) is editorial and on-brand, but if you'd rather lead with a clean garment-only shot, say the word and I'll swap to `Priject_5_Photo2`.
