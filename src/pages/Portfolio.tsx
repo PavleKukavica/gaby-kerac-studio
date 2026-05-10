@@ -35,7 +35,7 @@ const Portfolio = () => {
           Selected <em>Works</em>
         </h1>
         <p className="max-w-xl mt-8 text-stone reveal">
-          Six case studies tracing concept, construction, and the bold use of color — each piece a study in feminine structure and considered detail.
+          Seven case studies tracing concept, construction, and the bold use of color — each piece a study in feminine structure and considered detail.
         </p>
       </header>
 
@@ -80,7 +80,7 @@ const Portfolio = () => {
               {/* Process strip */}
               <div className="mx-auto max-w-[1600px] px-6 md:px-12 mt-16 md:mt-24 reveal">
                 <p className="text-[11px] uppercase tracking-luxury text-stone mb-6">Process</p>
-                <div className={`grid grid-cols-2 ${p.process.length >= 4 ? "md:grid-cols-4" : "md:grid-cols-3"} gap-4 md:gap-6`}>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                   {p.process.map((item, idx) => (
                     <ProcessTile key={idx} item={item} />
                   ))}

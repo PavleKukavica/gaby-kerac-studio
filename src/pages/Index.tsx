@@ -3,9 +3,8 @@ import { useReveal } from "@/hooks/use-reveal";
 import { projects } from "@/data/projects";
 import hero from "@/assets/hero-fashion.jpg";
 import blackSet from "@/assets/photos/black-vest-set.jpg";
-import bluePhoto from "@/assets/photos/blue-flare-dress.jpg";
-import paintedShirt from "@/assets/photos/painted-shirt.jpg";
-import orientalPhoto from "@/assets/photos/red-oriental-dress.jpg";
+
+const findProject = (slug: string) => projects.find((p) => p.slug === slug)!;
 
 const SectionLabel = ({ index, title }: { index: string; title: string }) => (
   <div className="flex items-center gap-4 text-[11px] uppercase tracking-luxury text-stone">
@@ -16,9 +15,9 @@ const SectionLabel = ({ index, title }: { index: string; title: string }) => (
 );
 
 const signature = [
-  { num: "01", src: bluePhoto, title: "Cobalt Fit-and-Flare", year: "2024", pos: "object-[center_25%]" },
-  { num: "02", src: paintedShirt, title: "Painted Panel Shirt", year: "2025", pos: "object-[center_30%]" },
-  { num: "03", src: orientalPhoto, title: "Oriental Brocade", year: "2023", pos: "object-[center_25%]" },
+  { num: "01", src: findProject("blue-fit-and-flare").image, title: "Cobalt Fit-and-Flare", year: "2024", pos: "object-[center_25%]" },
+  { num: "02", src: findProject("abstract-print-shirt").image, title: "Abstract Print Shirt", year: "2026", pos: "object-[center_30%]" },
+  { num: "03", src: findProject("oriental-fitted").image, title: "Oriental Brocade", year: "2025", pos: "object-[center_25%]" },
 ];
 
 const Index = () => {

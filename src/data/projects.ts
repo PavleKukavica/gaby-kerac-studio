@@ -1,12 +1,34 @@
 import blueRender from "@/assets/projects/blue-dress.jpg";
-import floral from "@/assets/projects/floral-two-piece.png";
 import orientalRender from "@/assets/projects/oriental-dress.png";
-import wrap from "@/assets/projects/wrap-skirt.jpg";
-import colorblock from "@/assets/projects/colorblock-skirt.jpg";
 
 import bluePhoto from "@/assets/photos/blue-flare-dress.jpg";
-import orientalPhoto from "@/assets/photos/red-oriental-dress.jpg";
-import paintedShirt from "@/assets/photos/painted-shirt.jpg";
+import blue1 from "@/assets/projects/01-blue-1.jpg";
+import blue2 from "@/assets/projects/01-blue-2.jpg";
+import blue3 from "@/assets/projects/01-blue-3.jpg";
+
+import black1 from "@/assets/projects/02-black-set-1.jpg";
+import black2 from "@/assets/projects/02-black-set-2.jpg";
+import black3 from "@/assets/projects/02-black-set-3.jpg";
+
+import oriental1 from "@/assets/projects/03-oriental-1.jpg";
+import oriental2 from "@/assets/projects/03-oriental-2.jpg";
+import oriental3 from "@/assets/projects/03-oriental-3.jpg";
+
+import tropical1 from "@/assets/projects/04-tropical-1.jpg";
+import tropical2 from "@/assets/projects/04-tropical-2.jpg";
+
+import abstract1 from "@/assets/projects/05-abstract-1.jpg";
+import abstract2 from "@/assets/projects/05-abstract-2.jpg";
+import abstract3 from "@/assets/projects/05-abstract-3.jpg";
+import abstract4 from "@/assets/projects/05-abstract-4.jpg";
+
+import geometric1 from "@/assets/projects/06-geometric-1.jpg";
+import geometric2 from "@/assets/projects/06-geometric-2.jpg";
+
+import blazer1 from "@/assets/projects/07-blazer-1.jpg";
+import blazer2 from "@/assets/projects/07-blazer-2.jpg";
+import blazer3 from "@/assets/projects/07-blazer-3.jpg";
+import blazer4 from "@/assets/projects/07-blazer-4.jpg";
 
 export type ProcessKind = "sketch" | "digital" | "clo3d" | "motion" | "final" | "placeholder";
 
@@ -22,8 +44,8 @@ export type Project = {
   title: string;
   category: string;
   year: string;
-  image: string;          // primary display image (real photo if available, else render)
-  renderImage?: string;   // CLO 3D / digital flat render
+  image: string;
+  renderImage?: string;
   concept: string;
   details: string[];
   process: ProcessItem[];
@@ -43,26 +65,27 @@ export const projects: Project[] = [
       "A feminine dress with a structured bodice and flowing skirt. Designed to create movement and elegance while keeping a refined silhouette. The bold cobalt brings energy and freshness.",
     details: ["Hand sketch", "Digital flat", "CLO 3D fitting", "Final garment"],
     process: [
-      { caption: "Hand sketch", kind: "placeholder" },
+      { image: blue3, caption: "Movement study", kind: "final" },
       { image: blueRender, caption: "Digital flat", kind: "digital" },
-      { caption: "CLO 3D fitting", kind: "placeholder" },
-      { image: bluePhoto, caption: "Final piece, worn", kind: "final" },
+      { image: blue1, caption: "Back silhouette", kind: "final" },
+      { image: blue2, caption: "Final piece, worn", kind: "final" },
     ],
   },
   {
-    slug: "floral-two-piece",
+    slug: "black-tailored-two-piece",
     number: "02",
-    title: "Floral Two-Piece Dress",
-    category: "Day to Evening",
-    year: "2024",
-    image: floral,
+    title: "Black Tailored Two-Piece",
+    category: "Contemporary Set",
+    year: "2026",
+    image: black1,
     concept:
-      "A modern structured set pairing a cropped top with a high-waisted pleated skirt. The floral pattern adds softness while the silhouette stays clean and architectural.",
-    details: ["Print study", "Pattern blocks", "Editorial shoot"],
+      "A modern two-piece set designed with clean lines and a minimalist silhouette. The structured cropped vest creates a polished look, while the fitted trousers add balance and elegance. Silver button details bring subtle contrast and a refined finish to the design.",
+    details: ["Concept development", "Hand sketch", "Pattern making", "Garment construction", "Final styling"],
     process: [
-      { caption: "Print study", kind: "placeholder" },
-      { caption: "Pattern blocks", kind: "placeholder" },
-      { image: floral, caption: "Final piece", kind: "final" },
+      { image: black2, caption: "Vest detail · silver buttons", kind: "final" },
+      { image: black3, caption: "Silhouette study", kind: "final" },
+      { caption: "Hand sketch", kind: "placeholder" },
+      { caption: "Pattern making", kind: "placeholder" },
     ],
   },
   {
@@ -70,65 +93,85 @@ export const projects: Project[] = [
     number: "03",
     title: "Oriental-Inspired Fitted Dress",
     category: "Couture Study",
-    year: "2023",
-    image: orientalPhoto,
+    year: "2025",
+    image: oriental1,
     renderImage: orientalRender,
     concept:
       "A fitted design inspired by traditional forms, with a high collar and asymmetrical neckline. Cultural reference meets precise modern tailoring.",
     details: ["Cultural research", "Embroidery samples", "Tailored fit"],
     process: [
-      { caption: "Cultural research", kind: "placeholder" },
       { image: orientalRender, caption: "Digital concept", kind: "digital" },
-      { caption: "CLO 3D fitting", kind: "placeholder" },
-      { image: orientalPhoto, caption: "Final piece, worn", kind: "final" },
+      { image: oriental2, caption: "Back, brocade", kind: "final" },
+      { image: oriental3, caption: "Side, blossom", kind: "final" },
+      { caption: "Cultural research", kind: "placeholder" },
     ],
   },
   {
-    slug: "asymmetrical-wrap-skirt",
+    slug: "tropical-floral-blouse",
     number: "04",
-    title: "Asymmetrical Wrap Skirt",
+    title: "Tropical Floral Blouse",
+    category: "Print / Daywear",
+    year: "2026",
+    image: tropical1,
+    concept:
+      "A lightweight sleeveless blouse inspired by tropical nature and vibrant summer colors. The flowing silhouette and artistic floral print create a fresh, playful look while maintaining a clean and elegant shape. Designed to combine comfort, movement, and expressive pattern details.",
+    details: ["Fabric selection", "Print composition", "Hand sketch", "Pattern development", "Final garment styling"],
+    process: [
+      { image: tropical2, caption: "Final, in motion", kind: "final" },
+      { caption: "Print composition", kind: "placeholder" },
+      { caption: "Hand sketch", kind: "placeholder" },
+      { caption: "Pattern development", kind: "placeholder" },
+    ],
+  },
+  {
+    slug: "abstract-print-shirt",
+    number: "05",
+    title: "Abstract Print Statement Shirt",
+    category: "Wearable Art",
+    year: "2026",
+    image: abstract2,
+    concept:
+      "A contemporary short-sleeve shirt designed with expressive abstract prints and warm sun-inspired tones. The relaxed silhouette is balanced with structured tailoring details, creating a modern yet artistic aesthetic. The vibrant composition brings energy, creativity, and individuality to the garment.",
+    details: ["Creative concept", "Print placement design", "Digital illustration", "Garment construction", "Final presentation"],
+    process: [
+      { image: abstract1, caption: "Cut pattern pieces", kind: "sketch" },
+      { image: abstract3, caption: "Back panel", kind: "final" },
+      { image: abstract4, caption: "Final, styled", kind: "final" },
+      { caption: "Digital illustration", kind: "placeholder" },
+    ],
+  },
+  {
+    slug: "geometric-two-piece",
+    number: "06",
+    title: "Geometric Two-Piece Ensemble",
+    category: "Coordinated Set",
+    year: "2024",
+    image: geometric1,
+    concept:
+      "A coordinated two-piece set featuring soft geometric patterns and a contemporary fitted silhouette. The cropped top and matching shorts create a balanced, playful composition inspired by modern art and youthful summer styling. Muted tones and clean construction give the design a refined yet relaxed character.",
+    details: ["Design research", "Pattern coordination", "Hand sketch", "Garment development", "Final styling and presentation"],
+    process: [
+      { image: geometric2, caption: "Movement, full silhouette", kind: "final" },
+      { caption: "Hand sketch", kind: "placeholder" },
+      { caption: "Pattern coordination", kind: "placeholder" },
+      { caption: "Design research", kind: "placeholder" },
+    ],
+  },
+  {
+    slug: "minimalist-blazer",
+    number: "07",
+    title: "Minimalist Structured Blazer",
     category: "Tailoring",
     year: "2024",
-    image: wrap,
+    image: blazer3,
     concept:
-      "A high-waisted wrap skirt with layered construction and decisive lines. The structured drape and bold color create a confident modern statement.",
-    details: ["Drape study", "Construction notes", "Color trial"],
+      "A modern tailored blazer designed with clean construction and an elegant oversized silhouette. The deep burgundy tone adds sophistication, while the minimal details emphasize shape, proportion, and craftsmanship. Created to combine timeless tailoring with a contemporary fashion aesthetic.",
+    details: ["Concept development", "Pattern drafting", "Tailoring techniques", "Garment fitting", "Final construction and finishing"],
     process: [
-      { caption: "Drape study", kind: "placeholder" },
-      { caption: "Construction notes", kind: "placeholder" },
-      { image: wrap, caption: "Final piece", kind: "final" },
-    ],
-  },
-  {
-    slug: "asymmetrical-colorblock",
-    number: "05",
-    title: "Asymmetrical Color-Block Skirt",
-    category: "Signature",
-    year: "2025",
-    image: colorblock,
-    concept:
-      "A minimal, striking design built on black-and-white contrast and asymmetry. Focused on structure, movement, and visual impact.",
-    details: ["Concept sketch", "CLO 3D drape", "Final piece"],
-    process: [
-      { caption: "Concept sketch", kind: "placeholder" },
-      { caption: "CLO 3D drape", kind: "placeholder" },
-      { image: colorblock, caption: "Final piece", kind: "final" },
-    ],
-  },
-  {
-    slug: "painted-panel-shirt",
-    number: "06",
-    title: "Painted Panel Shirt",
-    category: "Hand-Painted / Wearable Art",
-    year: "2025",
-    image: paintedShirt,
-    concept:
-      "A crisp poplin shirt extended into a hand-painted back panel — brushwork in saffron, terracotta, and sage. The piece treats the garment as canvas while the front stays sharply tailored.",
-    details: ["Painting study", "Panel construction", "Final piece"],
-    process: [
-      { caption: "Painting study", kind: "placeholder" },
-      { caption: "Panel construction", kind: "placeholder" },
-      { image: paintedShirt, caption: "Final piece, worn", kind: "final" },
+      { image: blazer1, caption: "Signature pin · gold detail", kind: "final" },
+      { image: blazer2, caption: "Fitting on dressform", kind: "clo3d" },
+      { image: blazer4, caption: "Pinning, atelier", kind: "sketch" },
+      { caption: "Final construction", kind: "placeholder" },
     ],
   },
 ];
