@@ -43,7 +43,7 @@ const Index = () => {
           <div className="max-w-5xl">
             <p className="text-[11px] uppercase tracking-luxury text-ink/70 mb-6 animate-fade-up">Fashion Designer</p>
             <h1 className="font-display text-[18vw] md:text-[9vw] leading-[0.9] text-ink animate-fade-up" style={{ animationDelay: "0.15s" }}>
-              Gaby <span className="italic">Kerac</span>
+              Gabriela <span className="italic">Kerac</span>
             </h1>
             <p className="mt-10 max-w-2xl font-display text-2xl md:text-3xl leading-snug text-balance text-ink animate-fade-up" style={{ animationDelay: "0.35s" }}>
               Modern feminine design with a focus on <em>elegance</em> and <em>structure</em>.
@@ -53,9 +53,9 @@ const Index = () => {
 
         <div className="hidden lg:block absolute right-12 top-1/2 w-[18vw] max-w-[280px] aspect-[3/4] z-10 animate-float-soft">
           <div className="w-full h-full overflow-hidden shadow-[var(--shadow-soft)] ring-1 ring-bone/40">
-            <img src={blackSet} alt="Gaby Kerac wearing her own design" className="w-full h-full object-cover object-[center_30%] editorial-img" />
+            <img src={blackSet} alt="Gabriela Kerac wearing her own design" className="w-full h-full object-cover object-[center_30%] editorial-img" />
           </div>
-          <p className="mt-3 text-[10px] uppercase tracking-luxury text-stone">— Gaby, in her own design</p>
+          <p className="mt-3 text-[10px] uppercase tracking-luxury text-stone">— Gabriela, in her own design</p>
         </div>
       </section>
 
@@ -199,13 +199,13 @@ const Index = () => {
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
             <div className="md:col-span-5 reveal">
               <div className="aspect-[3/4] overflow-hidden bg-muted">
-                <img src={blackSet} alt="Gaby Kerac" className="w-full h-full object-cover object-[center_25%] editorial-img" />
+                <img src={blackSet} alt="Gabriela Kerac" className="w-full h-full object-cover object-[center_25%] editorial-img" />
               </div>
             </div>
             <div className="md:col-span-6 md:col-start-7 reveal space-y-6">
-              <h2 className="font-display text-4xl md:text-5xl leading-tight">Gaby Kerac</h2>
+              <h2 className="font-display text-4xl md:text-5xl leading-tight">Gabriela Kerac</h2>
               <p className="text-base md:text-lg text-stone leading-relaxed">
-                The designer behind Gabys Design — a womenswear practice creating feminine, structured pieces that balance elegance with bold visual expression.
+                The designer behind Gabbys Design — a womenswear practice creating feminine, structured pieces that balance elegance with bold visual expression.
               </p>
               <p className="text-base md:text-lg text-stone leading-relaxed">
                 Drawing from nature and architecture, her work translates those influences into clean silhouettes enriched with pattern and color.

@@ -51,7 +51,7 @@ const Portfolio = () => {
               {/* Hero image — full bleed */}
               <div className="reveal mb-16 md:mb-24">
                 <div className="img-zoom w-full aspect-[16/10] md:aspect-[21/9] bg-muted overflow-hidden">
-                  <img src={p.image} alt={p.title} loading="lazy" className="w-full h-full object-cover object-[center_25%]" />
+                  <img src={p.image} alt={p.title} loading="lazy" className={`w-full h-full object-cover ${p.imagePosition ?? "object-[center_25%]"}`} />
                 </div>
               </div>
 

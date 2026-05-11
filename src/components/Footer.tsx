@@ -4,9 +4,9 @@ export const Footer = () => (
   <footer className="border-t border-border mt-32">
     <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-16 grid md:grid-cols-3 gap-12">
       <div>
-        <p className="font-display text-3xl">Gabys Design</p>
+        <p className="font-display text-3xl">Gabbys Design</p>
         <p className="mt-3 text-sm text-stone max-w-xs">
-          A womenswear practice by Gaby Kerac — refined silhouettes, natural materials, modern femininity.
+          A womenswear practice by Gabriela Kerac — refined silhouettes, natural materials, modern femininity.
         </p>
       </div>
       <div>
@@ -29,7 +29,7 @@ export const Footer = () => (
     </div>
     <div className="border-t border-border">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between text-[11px] uppercase tracking-editorial text-stone">
-        <span>© {new Date().getFullYear()} Gabys Design</span>
+        <span>© {new Date().getFullYear()} Gabbys Design</span>
         <span>Boston · Available for collaboration</span>
       </div>
     </div>
