@@ -101,7 +101,7 @@ const Index = () => {
         <div className="flex items-end justify-between mb-12 reveal">
           <div className="space-y-6">
             <SectionLabel index="02" title="Signature Pieces" />
-            <h2 className="font-display text-4xl md:text-6xl">Color, considered.</h2>
+            <h2 className="font-display text-4xl md:text-6xl">Tailoring, texture & visual storytelling.</h2>
           </div>
           <span className="hidden md:block text-[11px] uppercase tracking-luxury text-stone">2023 — 2025</span>
         </div>

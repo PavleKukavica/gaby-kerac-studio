@@ -72,9 +72,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "black-tailored-two-piece",
+    slug: "navy-tailored-two-piece",
     number: "02",
-    title: "Black Tailored Two-Piece",
+    title: "Navy Tailored Two-Piece",
     category: "Contemporary Set",
     year: "2026",
     image: black1,
