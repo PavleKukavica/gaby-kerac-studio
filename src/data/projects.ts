@@ -97,7 +97,7 @@ export const projects: Project[] = [
     image: oriental1,
     renderImage: orientalRender,
     concept:
-      "A fitted design inspired by traditional forms, with a high collar and asymmetrical neckline. Cultural reference meets precise modern tailoring.",
+      "A fitted design inspired by traditional forms, with an asymmetrical neckline. Cultural reference meets precise modern tailoring.",
     details: ["Cultural research", "Embroidery samples", "Tailored fit"],
     process: [
       { image: orientalRender, caption: "Digital concept", kind: "digital" },
