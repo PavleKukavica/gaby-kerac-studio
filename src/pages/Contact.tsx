@@ -78,15 +78,6 @@ const Contact = () => {
           ))}
         </ul>
 
-        <div className="mt-24 reveal">
-          <p className="font-display italic text-xl md:text-2xl text-stone max-w-2xl text-balance">
-            "Design, to me, is the quiet conversation between a woman and what
-            she chooses to wear."
-          </p>
-          <p className="mt-4 text-[11px] uppercase tracking-luxury">
-            — Gaby Kerac
-          </p>
-        </div>
       </section>
     </div>
   );

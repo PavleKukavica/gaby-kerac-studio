@@ -12,21 +12,21 @@ const About = () => {
       <header className="mx-auto max-w-[1600px] px-6 md:px-12 py-16 md:py-24">
         <p className="text-[11px] uppercase tracking-luxury text-stone reveal">About — The Designer</p>
         <h1 className="font-display text-6xl md:text-9xl mt-6 leading-[0.95] reveal">
-          Gaby <em>Kerac</em>
+          Gabriela <em>Kerac</em>
         </h1>
       </header>
 
       <section className="mx-auto max-w-[1600px] px-6 md:px-12 grid md:grid-cols-12 gap-12 py-16">
         <div className="md:col-span-5 reveal">
           <div className="aspect-[3/4] img-zoom">
-            <img src={portrait} alt="Gaby Kerac, fashion designer" loading="lazy" className="w-full h-full object-cover object-[center_25%] editorial-img" />
+            <img src={portrait} alt="Gabriela Kerac, fashion designer" loading="lazy" className="w-full h-full object-cover object-[center_25%] editorial-img" />
           </div>
           <p className="mt-4 text-[10px] uppercase tracking-luxury text-stone">In her own design — vest & trouser set</p>
         </div>
 
         <div className="md:col-span-6 md:col-start-7 space-y-8 text-lg leading-relaxed text-ink/90 reveal">
           <p className="font-display text-3xl md:text-4xl leading-snug text-balance">
-            Gaby Kerac is the fashion designer behind <em>Gabys Design</em> — a womenswear practice creating feminine, structured pieces that balance elegance with bold visual expression.
+            Gabriela Kerac is the fashion designer behind <em>Gabbys Design</em> — a womenswear practice creating feminine, structured pieces that balance elegance with bold visual expression.
           </p>
           <p>
             Her work is inspired by the relationship between color, form, and movement. She draws from nature and architecture, translating those influences into clean silhouettes enriched with pattern and color.
@@ -35,7 +35,7 @@ const About = () => {
             Her designs aim to bring positive energy, confidence, and individuality while staying refined and wearable — clothing that feels distinctive without losing the everyday.
           </p>
           <p>
-            Gaby combines traditional craftsmanship with modern tools — including CLO 3D and AI-assisted design processes — to create innovative, contemporary collections.
+            Gabriela combines traditional craftsmanship with modern tools — including CLO 3D and AI-assisted design processes — to create innovative, contemporary collections.
           </p>
         </div>
       </section>

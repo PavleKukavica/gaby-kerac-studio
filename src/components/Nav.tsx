@@ -31,7 +31,7 @@ export const Nav = () => {
     >
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 h-20 flex items-center justify-between">
         <Link to="/" className="font-display text-xl md:text-2xl tracking-wide">
-          Gabys <span className="italic text-stone">Design</span>
+          Gabbys <span className="italic text-stone">Design</span>
         </Link>
         <nav className="hidden md:flex items-center gap-12">
           {links.map((l) => (
