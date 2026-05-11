@@ -109,7 +109,7 @@ export const projects: Project[] = [
   {
     slug: "tropical-floral-blouse",
     number: "04",
-    title: "Tropical Floral Blouse",
+    title: "Structured Blazer",
     category: "Print / Daywear",
     year: "2026",
     image: tropical1,
