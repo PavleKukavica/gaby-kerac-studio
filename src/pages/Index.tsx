@@ -31,24 +31,32 @@ const Index = () => {
       {/* 01 — HERO */}
       <section className="relative min-h-screen w-full overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <img src={hero} alt="Editorial fashion portrait" className="w-full h-full object-cover animate-ken-burns" />
+          <img src={heroKickstarter.url} alt="The convertible coat — blue hooded winter coat" className="w-full h-full object-cover object-[center_25%] animate-ken-burns" />
           <div className="absolute inset-0 bg-gradient-to-b from-bone/15 via-transparent to-bone/60" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-[1600px] px-6 md:px-12 pt-40 md:pt-48 pb-20 min-h-screen flex flex-col justify-between">
           <div className="flex justify-between items-start text-[11px] uppercase tracking-luxury text-ink/80 animate-fade-in">
-            <span>Collection / SS 26</span>
+            <span>Kickstarter · Coming Soon</span>
             <span className="hidden md:block">Boston — New York</span>
           </div>
 
           <div className="max-w-5xl">
-            <p className="text-[11px] uppercase tracking-luxury text-ink/70 mb-6 animate-fade-up">Fashion Designer</p>
-            <h1 className="font-display text-[18vw] md:text-[9vw] leading-[0.9] text-ink animate-fade-up" style={{ animationDelay: "0.15s" }}>
-              Gabriela <span className="italic">Kerac</span>
+            <p className="text-[11px] uppercase tracking-luxury text-ink/70 mb-6 animate-fade-up">The Kickstarter Campaign</p>
+            <h1 className="font-display text-[16vw] md:text-[8.5vw] leading-[0.9] text-ink animate-fade-up" style={{ animationDelay: "0.15s" }}>
+              The Convertible <span className="italic">Coat</span>
             </h1>
             <p className="mt-10 max-w-2xl font-display text-2xl md:text-3xl leading-snug text-balance text-ink animate-fade-up" style={{ animationDelay: "0.35s" }}>
-              Modern feminine design with a focus on <em>elegance</em> and <em>structure</em>.
+              A feminine winter coat with <em>interchangeable hoods</em> and <em>sleeves</em> — one coat, many looks.
             </p>
+            <a
+              href="#kickstarter"
+              className="group mt-10 inline-flex items-center gap-2 border-b border-ink pb-1 text-[11px] uppercase tracking-luxury text-ink animate-fade-up"
+              style={{ animationDelay: "0.5s" }}
+            >
+              <span className="transition-all duration-500 group-hover:tracking-[0.4em]">Pre-order · 20% early bird</span>
+              <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
+            </a>
           </div>
         </div>
 
@@ -60,7 +68,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 02 — INTRODUCTION */}
+      {/* 02 — KICKSTARTER CAMPAIGN */}
+      <KickstarterCampaign />
+
+      {/* 03 — INTRODUCTION */}
       <section className="border-t border-border">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-20 md:py-28">
           <div className="reveal mb-12"><SectionLabel index="01" title="Introduction" /></div>
