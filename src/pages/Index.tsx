@@ -74,7 +74,7 @@ const Index = () => {
       {/* 03 — INTRODUCTION */}
       <section className="border-t border-border">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-20 md:py-28">
-          <div className="reveal mb-12"><SectionLabel index="01" title="Introduction" /></div>
+          <div className="reveal mb-12"><SectionLabel index="02" title="Introduction" /></div>
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 reveal">
             <p className="md:col-span-7 font-display text-2xl md:text-3xl leading-snug text-balance text-ink">
               A fashion designer focused on structured silhouettes, bold color expression, and refined femininity — pieces that feel both distinctive and entirely wearable.
@@ -112,7 +112,7 @@ const Index = () => {
       <section className="mx-auto max-w-[1600px] px-6 md:px-12 py-24 md:py-32">
         <div className="flex items-end justify-between mb-12 reveal">
           <div className="space-y-6">
-            <SectionLabel index="02" title="Signature Pieces" />
+            <SectionLabel index="03" title="Signature Pieces" />
             <h2 className="font-display text-4xl md:text-6xl">Tailoring, texture & visual storytelling.</h2>
           </div>
           <span className="hidden md:block text-[11px] uppercase tracking-luxury text-stone">2023 — 2025</span>
@@ -140,7 +140,7 @@ const Index = () => {
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <div className="flex items-end justify-between mb-14 reveal">
             <div className="space-y-6">
-              <SectionLabel index="03" title="Selected Works" />
+              <SectionLabel index="04" title="Selected Works" />
               <h2 className="font-display text-4xl md:text-6xl">Recent Pieces</h2>
             </div>
             <Link to="/portfolio" className="hidden md:inline-block text-[11px] uppercase tracking-luxury link-underline">View all</Link>
@@ -207,7 +207,7 @@ const Index = () => {
       {/* 06 — ABOUT PREVIEW */}
       <section className="border-t border-border bg-bone">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-24 md:py-32">
-          <div className="mb-12 reveal"><SectionLabel index="04" title="About the Designer" /></div>
+          <div className="mb-12 reveal"><SectionLabel index="05" title="About the Designer" /></div>
           <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
             <div className="md:col-span-5 reveal">
               <div className="aspect-[3/4] overflow-hidden bg-muted">
@@ -234,7 +234,7 @@ const Index = () => {
       {/* 07 — CTA */}
       <section className="border-t border-border">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-24 md:py-32">
-          <div className="mb-12 reveal"><SectionLabel index="05" title="Contact" /></div>
+          <div className="mb-12 reveal"><SectionLabel index="06" title="Contact" /></div>
           <div className="grid md:grid-cols-12 gap-8 items-end reveal">
             <h2 className="md:col-span-8 font-display text-5xl md:text-7xl leading-[0.95] text-balance">
               Designing what comes <em>next</em> — together.
