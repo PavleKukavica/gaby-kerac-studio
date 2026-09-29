@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import campaign from "@/assets/hero-kickstarter.jpg.asset.json";
+import campaign from "@/assets/hero-kickstarter.jpg";
 
 /* Launch date: two months from the campaign page build (Sep 29, 2026).
    Ask the designer to update this once the real Kickstarter date is fixed. */
@@ -92,7 +92,7 @@ const KickstarterCampaign = () => {
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
           <div className="md:col-span-6 reveal">
             <div className="img-zoom aspect-[3/4] bg-muted">
-              <img src={campaign.url} alt="The convertible coat — blue hooded caped coat" loading="lazy" className="w-full h-full object-cover object-[center_20%] editorial-img" />
+              <img src={campaign} alt="The convertible coat — blue hooded caped coat" loading="lazy" className="w-full h-full object-cover object-[center_20%] editorial-img" />
             </div>
           </div>
 

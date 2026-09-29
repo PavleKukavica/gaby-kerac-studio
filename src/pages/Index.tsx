@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useReveal } from "@/hooks/use-reveal";
 import { projects } from "@/data/projects";
-import heroKickstarter from "@/assets/hero-kickstarter.jpg.asset.json";
+import heroKickstarter from "@/assets/hero-kickstarter.jpg";
 import blackSet from "@/assets/photos/black-vest-set.jpg";
 import KickstarterCampaign from "@/components/KickstarterCampaign";
 
@@ -31,7 +31,7 @@ const Index = () => {
       {/* 01 — HERO */}
       <section className="relative min-h-screen w-full overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <img src={heroKickstarter.url} alt="The convertible coat — blue hooded winter coat" className="w-full h-full object-cover object-[center_25%] animate-ken-burns" />
+          <img src={heroKickstarter} alt="The convertible coat — blue hooded winter coat" className="w-full h-full object-cover object-[center_25%] animate-ken-burns" />
           <div className="absolute inset-0 bg-gradient-to-b from-bone/15 via-transparent to-bone/60" />
         </div>
 
