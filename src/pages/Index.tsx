@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { useReveal } from "@/hooks/use-reveal";
 import { projects } from "@/data/projects";
-import hero from "@/assets/hero-fashion.jpg";
+import heroKickstarter from "@/assets/hero-kickstarter.jpg.asset.json";
 import blackSet from "@/assets/photos/black-vest-set.jpg";
+import KickstarterCampaign from "@/components/KickstarterCampaign";
 
 const findProject = (slug: string) => projects.find((p) => p.slug === slug)!;
 
