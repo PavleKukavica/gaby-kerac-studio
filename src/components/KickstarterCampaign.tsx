@@ -41,9 +41,9 @@ const SectionLabel = ({ index, title }: { index: string; title: string }) => (
 );
 
 const features = [
-  ["One coat, many looks", "Swap the hood and sleeves to change the character of the coat in seconds."],
-  ["Interchangeable details", "Hoods and sleeves come in different colors and finishes, all designed to snap together cleanly."],
-  ["Structured femininity", "A tailored, feminine silhouette with soft draping — the house language of Gabbys Design."],
+  ["Smart temperature control", "Natural Merino wool helps regulate temperature while maintaining breathable comfort."],
+  ["Water resistant", "The outer surface is designed to help repel light rain and snow for everyday winter wear."],
+  ["Breathable Merino wool", "A natural, breathable material selected for warmth, softness, and lasting comfort."],
 ];
 
 const KickstarterCampaign = () => {
@@ -106,14 +106,19 @@ const KickstarterCampaign = () => {
               </p>
             </div>
 
-            <dl className="space-y-5">
+            <dl id="smart-features" className="space-y-5 scroll-mt-28">
               {features.map(([t, d]) => (
                 <div key={t} className="border-b border-border pb-5">
-                  <dt className="font-display text-xl md:text-2xl">{t}</dt>
+                  <dt id={t === "Breathable Merino wool" ? "merino-wool" : undefined} className="scroll-mt-28 font-display text-xl md:text-2xl">{t}</dt>
                   <dd className="mt-2 text-sm md:text-base text-stone leading-relaxed">{d}</dd>
                 </div>
               ))}
             </dl>
+
+            <div id="sustainability" className="scroll-mt-28 border-l border-ink/25 pl-5">
+              <p className="text-[10px] uppercase tracking-luxury text-stone">Sustainable & natural</p>
+              <p className="mt-3 text-sm leading-relaxed text-stone">Merino wool is a natural, renewable fiber chosen for comfort, performance, and a more considered wardrobe.</p>
+            </div>
 
             {/* Early-bird offer */}
             <div className="border border-ink/20 bg-sand/60 p-6 md:p-8">

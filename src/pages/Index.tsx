@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ArrowRight, Droplets, Leaf, Thermometer, Wind } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { projects } from "@/data/projects";
-import heroKickstarter from "@/assets/hero-kickstarter.jpg";
+import heroKickstarter from "@/assets/kickstarter-hero-clean.jpg";
 import blackSet from "@/assets/photos/black-vest-set.jpg";
 import KickstarterCampaign from "@/components/KickstarterCampaign";
 
@@ -15,6 +17,44 @@ const SectionLabel = ({ index, title }: { index: string; title: string }) => (
   </div>
 );
 
+const LAUNCH_DATE = new Date("2026-11-29T17:00:00Z");
+
+const getCountdown = () => {
+  const now = new Date();
+  const total = Math.max(0, LAUNCH_DATE.getTime() - now.getTime());
+  let months = 0;
+  const cursor = new Date(now);
+  while (true) {
+    const next = new Date(cursor);
+    next.setMonth(next.getMonth() + 1);
+    if (next > LAUNCH_DATE) break;
+    months += 1;
+    cursor.setMonth(cursor.getMonth() + 1);
+  }
+  const rest = Math.max(0, LAUNCH_DATE.getTime() - cursor.getTime());
+  const seconds = Math.floor(rest / 1000);
+  return {
+    Months: months,
+    Days: Math.floor(seconds / 86400),
+    Hours: Math.floor((seconds % 86400) / 3600),
+    Minutes: Math.floor((seconds % 3600) / 60),
+    Seconds: seconds % 60,
+  };
+};
+
+const heroFeatures = [
+  { label: "Regulates temperature", icon: Thermometer },
+  { label: "Water resistant", icon: Droplets },
+  { label: "Breathable Merino wool", icon: Wind },
+  { label: "Sustainable & natural", icon: Leaf },
+];
+
+const featureCards = [
+  { title: "Smart temperature control", icon: Thermometer, href: "#smart-features" },
+  { title: "Water resistant", icon: Droplets, href: "#smart-features" },
+  { title: "Breathable Merino wool", icon: Wind, href: "#merino-wool" },
+];
+
 const signature = [
   { num: "01", src: findProject("blue-fit-and-flare").image, title: "Cobalt Fit-and-Flare", year: "2024", pos: "object-[center_25%]" },
   { num: "02", src: findProject("abstract-print-shirt").image, title: "Abstract Print Shirt", year: "2026", pos: "object-[center_30%]" },
@@ -25,47 +65,80 @@ const Index = () => {
   const ref = useReveal();
   const works = projects.slice(0, 4);
   const feature = projects[4];
+  const [countdown, setCountdown] = useState(getCountdown);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setCountdown(getCountdown()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   return (
     <div ref={ref}>
       {/* 01 — HERO */}
-      <section className="relative min-h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <img src={heroKickstarter} alt="The convertible coat — blue hooded winter coat" className="w-full h-full object-cover object-[center_25%] animate-ken-burns" />
-          <div className="absolute inset-0 bg-gradient-to-b from-bone/15 via-transparent to-bone/60" />
-        </div>
+      <section id="home" className="relative min-h-[940px] lg:min-h-screen w-full overflow-hidden bg-hero-navy text-hero-foreground">
+        <img src={heroKickstarter} alt="Woman wearing the cobalt Smart Merino coat in a winter landscape" className="absolute inset-0 h-full w-full object-cover object-[58%_center] lg:object-center" />
+        <div className="absolute inset-0 bg-hero-shade" />
 
-        <div className="relative z-10 mx-auto max-w-[1600px] px-6 md:px-12 pt-40 md:pt-48 pb-20 min-h-screen flex flex-col justify-between">
-          <div className="flex justify-between items-start text-[11px] uppercase tracking-luxury text-ink/80 animate-fade-in">
-            <span>Kickstarter · Coming Soon</span>
-            <span className="hidden md:block">Boston — New York</span>
-          </div>
-
-          <div className="max-w-5xl">
-            <p className="text-[11px] uppercase tracking-luxury text-ink/70 mb-6 animate-fade-up">The Kickstarter Campaign</p>
-            <h1 className="font-display text-[16vw] md:text-[8.5vw] leading-[0.9] text-ink animate-fade-up" style={{ animationDelay: "0.15s" }}>
-              The Convertible <span className="italic">Coat</span>
+        <div className="relative z-10 mx-auto flex min-h-[940px] max-w-[1600px] flex-col px-6 pb-10 pt-28 md:px-12 md:pt-32 lg:min-h-screen lg:pb-8">
+          <div className="max-w-[620px] animate-fade-up lg:mt-6">
+            <p className="text-[11px] font-medium uppercase tracking-luxury text-hero-accent">Launching soon</p>
+            <h1 className="mt-5 font-sans text-4xl font-semibold leading-[1.08] md:text-6xl lg:text-7xl">
+              The World’s 1st<br />
+              <span className="text-hero-accent">Smart Merino Kaput.</span>
             </h1>
-            <p className="mt-10 max-w-2xl font-display text-2xl md:text-3xl leading-snug text-balance text-ink animate-fade-up" style={{ animationDelay: "0.35s" }}>
-              A feminine winter coat with <em>interchangeable hoods</em> and <em>sleeves</em> — one coat, many looks.
+            <p className="mt-5 text-[10px] font-medium uppercase tracking-luxury text-hero-foreground/85 md:text-xs">
+              Natural comfort. Smarter living.
             </p>
-            <a
-              href="#kickstarter"
-              className="group mt-10 inline-flex items-center gap-2 border-b border-ink pb-1 text-[11px] uppercase tracking-luxury text-ink animate-fade-up"
-              style={{ animationDelay: "0.5s" }}
-            >
-              <span className="transition-all duration-500 group-hover:tracking-[0.4em]">Pre-order · 20% early bird</span>
-              <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
+
+            <div className="mt-8 grid max-w-[520px] grid-cols-2 gap-5 sm:grid-cols-4">
+              {heroFeatures.map(({ label, icon: Icon }) => (
+                <a key={label} href={label.includes("Merino") ? "#merino-wool" : label.includes("Sustainable") ? "#sustainability" : "#smart-features"} className="group text-center">
+                  <span className="mx-auto flex size-12 items-center justify-center rounded-full border border-hero-accent/80 bg-hero-panel/40 transition-colors group-hover:bg-hero-accent/20">
+                    <Icon size={23} strokeWidth={1.5} />
+                  </span>
+                  <span className="mt-2 block text-[9px] font-semibold uppercase leading-tight text-hero-foreground/90">{label}</span>
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-8 max-w-[550px] rounded-[6px] border border-hero-accent/75 bg-hero-panel/65 p-4 shadow-hero-glow backdrop-blur-md md:p-5">
+              <p className="mb-3 text-[10px] font-medium uppercase tracking-luxury">Launching in</p>
+              <div className="grid grid-cols-5 divide-x divide-hero-accent/25">
+                {Object.entries(countdown).map(([label, value]) => (
+                  <div key={label} className="px-1 text-center">
+                    <p className="font-display text-2xl tabular-nums md:text-4xl">{String(value).padStart(2, "0")}</p>
+                    <p className="mt-1 text-[7px] uppercase md:text-[9px]">{label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <a href="#kickstarter-signup" className="group mt-5 inline-flex min-h-14 items-center justify-center gap-5 rounded-full border border-hero-accent bg-hero-panel/70 px-8 text-sm font-semibold shadow-hero-glow backdrop-blur-md transition-colors hover:bg-hero-accent/20">
+              Coming Soon on Kickstarter
+              <ArrowRight className="transition-transform group-hover:translate-x-1" size={20} />
             </a>
           </div>
-        </div>
 
-        <div className="hidden lg:block absolute right-12 top-1/2 w-[18vw] max-w-[280px] aspect-[3/4] z-10 animate-float-soft">
-          <div className="w-full h-full overflow-hidden shadow-[var(--shadow-soft)] ring-1 ring-bone/40">
-            <img src={blackSet} alt="Gabriela Kerac wearing her own design" className="w-full h-full object-cover object-[center_30%] editorial-img" />
+          <div className="mt-auto hidden w-[315px] self-end space-y-3 lg:block">
+            {featureCards.map(({ title, icon: Icon, href }) => (
+              <a key={title} href={href} className="group flex items-center gap-4 rounded-[6px] border border-hero-accent/60 bg-hero-panel/70 p-4 shadow-hero-glow backdrop-blur-md transition-transform hover:-translate-x-1">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-hero-accent/60"><Icon size={23} strokeWidth={1.5} /></span>
+                <span className="text-xs font-semibold uppercase leading-snug text-hero-accent">{title}</span>
+                <ArrowRight className="ml-auto opacity-60 transition-transform group-hover:translate-x-1" size={17} />
+              </a>
+            ))}
           </div>
-          <p className="mt-3 text-[10px] uppercase tracking-luxury text-stone">— Gabriela, in her own design</p>
         </div>
+      </section>
+
+      <section className="bg-early-bird text-early-bird-foreground">
+        <a href="#kickstarter-signup" className="group mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-6 py-7 md:px-12 md:py-9">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-luxury">Limited launch offer</p>
+            <p className="mt-2 font-display text-3xl md:text-5xl">Pre-Order · 20% Early Bird</p>
+          </div>
+          <span className="flex size-14 shrink-0 items-center justify-center rounded-full border border-early-bird-foreground/50 transition-transform group-hover:translate-x-1 md:size-16"><ArrowRight /></span>
+        </a>
       </section>
 
       {/* 02 — KICKSTARTER CAMPAIGN */}
