@@ -43,6 +43,12 @@
     --taupe: 28 12% 70%;
     --stone: 25 8% 38%;
     --ink: 24 10% 12%;
+    --hero-navy: 216 69% 12%;
+    --hero-foreground: 210 30% 98%;
+    --hero-accent: 197 100% 83%;
+    --hero-panel: 215 64% 16%;
+    --early-bird: 224 74% 42%;
+    --early-bird-foreground: 210 30% 98%;
 
     --font-display: 'Cormorant Garamond', serif;
     --font-sans: 'Inter', system-ui, sans-serif;
@@ -77,6 +83,14 @@
     letter-spacing: -0.01em;
   }
   ::selection { background: hsl(var(--ink)); color: hsl(var(--bone)); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 @layer utilities {

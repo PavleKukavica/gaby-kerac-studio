@@ -23,6 +23,12 @@ export default {
         taupe: "hsl(var(--taupe))",
         stone: "hsl(var(--stone))",
         ink: "hsl(var(--ink))",
+        "hero-navy": "hsl(var(--hero-navy))",
+        "hero-foreground": "hsl(var(--hero-foreground))",
+        "hero-accent": "hsl(var(--hero-accent))",
+        "hero-panel": "hsl(var(--hero-panel))",
+        "early-bird": "hsl(var(--early-bird))",
+        "early-bird-foreground": "hsl(var(--early-bird-foreground))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -71,6 +77,12 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "hero-shade": "linear-gradient(90deg, hsl(var(--hero-navy) / 0.94) 0%, hsl(var(--hero-navy) / 0.68) 34%, hsl(var(--hero-navy) / 0.06) 63%, hsl(var(--hero-navy) / 0.28) 100%)",
+      },
+      boxShadow: {
+        "hero-glow": "0 0 22px hsl(var(--hero-accent) / 0.28), inset 0 0 18px hsl(var(--hero-accent) / 0.08)",
       },
       keyframes: {
         "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
