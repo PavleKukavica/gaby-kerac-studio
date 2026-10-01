@@ -106,18 +106,18 @@ const KickstarterCampaign = () => {
               </p>
             </div>
 
-            <dl id="smart-features" className="space-y-5 scroll-mt-28">
+            <dl className="space-y-5">
               {features.map(([t, d]) => (
                 <div key={t} className="border-b border-border pb-5">
-                  <dt id={t === "Breathable Merino wool" ? "merino-wool" : undefined} className="scroll-mt-28 font-display text-xl md:text-2xl">{t}</dt>
+                  <dt className="font-display text-xl md:text-2xl">{t}</dt>
                   <dd className="mt-2 text-sm md:text-base text-stone leading-relaxed">{d}</dd>
                 </div>
               ))}
             </dl>
 
-            <div id="sustainability" className="scroll-mt-28 border-l border-ink/25 pl-5">
-              <p className="text-[10px] uppercase tracking-luxury text-stone">Sustainable & natural</p>
-              <p className="mt-3 text-sm leading-relaxed text-stone">Merino wool is a natural, renewable fiber chosen for comfort, performance, and a more considered wardrobe.</p>
+            <div className="border-l border-ink/25 pl-5">
+              <p className="text-[10px] uppercase tracking-luxury text-stone">Natural & considered</p>
+              <p className="mt-3 text-sm leading-relaxed text-stone">Merino wool is a natural fiber chosen for comfort, performance, and a more considered wardrobe.</p>
             </div>
 
             {/* Early-bird offer */}
