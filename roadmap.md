@@ -9,3 +9,5 @@
 - [x] Create preorder-signup edge function (save + append to Google Sheet)
 - [x] Link Google Sheets connection with user
 - [x] Wire sign-up form on home page
+- [x] Use all supplied campaign images in the Smart Merino homepage story
+- [ ] Complete desktop and mobile visual review
