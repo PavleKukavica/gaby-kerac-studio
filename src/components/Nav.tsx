@@ -11,7 +11,7 @@ const pageLinks = [
 
 const homeLinks = [
   { to: "#home", label: "Home" },
-  { to: "#kickstarter", label: "Our Coat" },
+  { to: "#our-coat", label: "Our Coat" },
   { to: "#smart-features", label: "Smart Features" },
   { to: "#merino-wool", label: "Merino Wool" },
   { to: "#sustainability", label: "Sustainability" },
