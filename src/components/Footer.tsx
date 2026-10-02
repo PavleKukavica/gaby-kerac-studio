@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-export const Footer = () => (
-  <footer className="border-t border-border mt-32">
+export const Footer = () => {
+  const { pathname } = useLocation();
+  return (
+  <footer className={`border-t border-border ${pathname === "/" ? "" : "mt-32"}`}>
     <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-16 grid md:grid-cols-3 gap-12">
       <div>
         <p className="font-display text-3xl">Gabbys Design</p>
@@ -30,8 +32,9 @@ export const Footer = () => (
     <div className="border-t border-border">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between text-[11px] uppercase tracking-editorial text-stone">
         <span>© {new Date().getFullYear()} Gabbys Design</span>
-        <span>Boston · Available for collaboration</span>
+        <span>Boston MA</span>
       </div>
     </div>
   </footer>
-);
+  );
+};

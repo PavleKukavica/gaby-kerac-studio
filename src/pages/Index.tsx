@@ -56,7 +56,7 @@ const Index = () => {
             <p className="text-[11px] font-medium uppercase tracking-luxury text-hero-accent">Launching soon</p>
             <h1 className="mt-5 font-sans text-4xl font-semibold leading-[1.08] md:text-6xl lg:text-7xl">
               The World’s 1st<br />
-              <span className="text-hero-accent">Smart Merino Kaput.</span>
+              <span className="text-hero-accent">Smart Merino Coat.</span>
             </h1>
             <p className="mt-5 text-[10px] font-medium uppercase tracking-luxury text-hero-foreground/85 md:text-xs">Natural comfort. Smarter living.</p>
 
