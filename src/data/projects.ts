@@ -83,6 +83,7 @@ export type Project = {
   year: string;
   image: string;
   imagePosition?: string;
+  imageScale?: "contain" | "cover";
   renderImage?: string;
   concept: string;
   details: string[];
@@ -98,6 +99,7 @@ export const projects: Project[] = [
     category: "Eveningwear",
     year: "2024",
     image: pBlueHero.url,
+    imagePosition: "object-[center_32%]",
     renderImage: blueRender,
     concept:
       "A feminine dress with a structured bodice and flowing skirt. Designed to create movement and elegance while keeping a refined silhouette. The bold cobalt brings energy and freshness.",
@@ -116,6 +118,7 @@ export const projects: Project[] = [
     category: "Contemporary Set",
     year: "2026",
     image: pNavyHero.url,
+    imagePosition: "object-[center_30%]",
     concept:
       "A modern two-piece set designed with clean lines and a minimalist silhouette. The structured cropped vest creates a polished look, while the fitted trousers add balance and elegance. Silver button details bring subtle contrast and a refined finish to the design.",
     details: ["Concept development", "Hand sketch", "Pattern making", "Garment construction", "Final styling"],
@@ -151,6 +154,7 @@ export const projects: Project[] = [
     category: "Print / Daywear",
     year: "2026",
     image: tropical1,
+    imageScale: "contain",
     concept:
       "A lightweight sleeveless blouse inspired by tropical nature and vibrant summer colors. The flowing silhouette and artistic floral print create a fresh, playful look while maintaining a clean and elegant shape. Designed to combine comfort, movement, and expressive pattern details.",
     details: ["Fabric selection", "Print composition", "Hand sketch", "Pattern development", "Final garment styling"],
@@ -253,6 +257,7 @@ export const projects: Project[] = [
     category: "Resort Set",
     year: "2026",
     image: pRivHero.url,
+    imageScale: "contain",
     concept:
       "A two-piece resort ensemble combining a navy polka-dot crop top with a paneled mauve-and-navy skirt. Inspired by lakeside summers on the Riviera, the design plays with retro print and soft color blocking for a look that feels nostalgic yet fresh.",
     details: ["Mood & location research", "Technical flats", "Fabric selection", "Garment construction", "Editorial styling"],

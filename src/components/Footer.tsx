@@ -8,15 +8,15 @@ export const Footer = () => {
       <div>
         <p className="font-display text-3xl">Gabbys Design</p>
         <p className="mt-3 text-sm text-stone max-w-xs">
-          A womenswear practice by Gabriela Kerac — refined silhouettes, natural materials, modern femininity.
+          The Smart Merino Coat — natural comfort, considered design and smarter warmth in development.
         </p>
       </div>
       <div>
-        <p className="text-[11px] uppercase tracking-luxury text-stone mb-4">Navigate</p>
+        <p className="text-[11px] uppercase tracking-luxury text-stone mb-4">Explore</p>
         <ul className="space-y-2 text-sm">
-          <li><Link to="/" className="link-underline">Home</Link></li>
-          <li><Link to="/portfolio" className="link-underline">Portfolio</Link></li>
-          <li><Link to="/about" className="link-underline">About</Link></li>
+          <li><a href="/#our-coat" className="link-underline">The Coat</a></li>
+          <li><a href="/#smart-features" className="link-underline">Smart Features</a></li>
+          <li><a href="/#development" className="link-underline">Development</a></li>
           <li><Link to="/contact" className="link-underline">Contact</Link></li>
         </ul>
       </div>

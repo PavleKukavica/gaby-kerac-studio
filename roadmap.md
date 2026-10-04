@@ -11,3 +11,7 @@
 - [x] Wire sign-up form on home page
 - [x] Use all supplied campaign images in the Smart Merino homepage story
 - [ ] Complete desktop and mobile visual review
+- [ ] Unify global navigation around the Smart Merino Coat campaign
+- [ ] Redesign the homepage as a transparent Kickstarter product story
+- [ ] Add the supplied hero and add-on product imagery
+- [ ] Improve desktop Portfolio hero framing and scroll movement

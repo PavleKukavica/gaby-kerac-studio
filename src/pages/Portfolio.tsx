@@ -30,12 +30,12 @@ const Portfolio = () => {
   return (
     <div ref={ref} className="pt-32">
       <header className="mx-auto max-w-[1600px] px-6 md:px-12 py-16 md:py-24">
-        <p className="text-[11px] uppercase tracking-luxury text-stone reveal">Portfolio — 2023 / 2025</p>
+        <p className="text-[11px] uppercase tracking-luxury text-stone reveal">Portfolio — 2023 / 2026</p>
         <h1 className="font-display text-6xl md:text-9xl mt-6 leading-[0.95] reveal">
           Selected <em>Works</em>
         </h1>
         <p className="max-w-xl mt-8 text-stone reveal">
-          Seven case studies tracing concept, construction, and the bold use of color — each piece a study in feminine structure and considered detail.
+          Ten case studies tracing concept, construction, and the bold use of color — each piece a study in feminine structure and considered detail.
         </p>
       </header>
 
@@ -50,8 +50,8 @@ const Portfolio = () => {
             >
               {/* Hero image — full bleed */}
               <div className="reveal mb-16 md:mb-24">
-                <div className="img-zoom w-full aspect-[16/10] md:aspect-[21/9] bg-muted overflow-hidden">
-                  <img src={p.image} alt={p.title} loading="lazy" className={`w-full h-full object-cover ${p.imagePosition ?? "object-[center_25%]"}`} />
+                <div className="portfolio-hero w-full aspect-[16/10] md:aspect-[21/9] bg-muted overflow-hidden">
+                  <img src={p.image} alt={p.title} loading="lazy" className={`portfolio-hero-image w-full h-full ${p.imageScale === "contain" ? "object-contain" : "object-cover"} ${p.imagePosition ?? "object-[center_25%]"}`} />
                 </div>
               </div>
 
