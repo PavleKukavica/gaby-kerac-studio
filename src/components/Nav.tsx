@@ -10,6 +10,8 @@ const links = [
   { href: "/#merino-wool", label: "Merino Wool" },
   { href: "/#development", label: "Development" },
   { href: "/#sustainability", label: "Sustainability" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 

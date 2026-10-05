@@ -17,6 +17,8 @@ export const Footer = () => {
           <li><a href="/#our-coat" className="link-underline">The Coat</a></li>
           <li><a href="/#smart-features" className="link-underline">Smart Features</a></li>
           <li><a href="/#development" className="link-underline">Development</a></li>
+          <li><Link to="/portfolio" className="link-underline">Portfolio</Link></li>
+          <li><Link to="/about" className="link-underline">About</Link></li>
           <li><Link to="/contact" className="link-underline">Contact</Link></li>
         </ul>
       </div>
